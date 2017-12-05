@@ -45,6 +45,8 @@ scp bigdata*.tar.gz jdk*.tar.gz $user@${host}:~
 ssh $user@${host} "tar -xzvf bigdata_*.tar.gz"
 ssh $user@${host} "tar -xzvf jdk_*tar.gz "
 
+ssh $user@${host} "wget http://apache.claz.org/tez/0.9.0/apache-tez-0.9.0-bin.tar.gz"
 ssh $user@${host} "source .bash_profile; bin/set_up_ssh.sh;exit; "
 
 ssh $user@${host} "source .bash_profile;  bin/links.sh; bin/set_up_env.sh; bin/hadoop_start.sh; exit;"
+ssh $user@${host} "source .bash_profile; hadoop fs -put apache-tez-0.9.0-bin.tar.gz   hdfs://0.0.0.0/apps/tez/apache-tez-0.9.0-bin.tar.gz"

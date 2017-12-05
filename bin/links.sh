@@ -4,7 +4,7 @@
 
 cd $HOME
 
-
+hadoop fs -mkdir -p /apps/tez
 
 mkdir -p ~
 if [ -d ~/data/hdfs/namenode/ ]
